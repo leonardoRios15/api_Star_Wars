@@ -1,0 +1,6 @@
+CREATE TABLE planets(
+    id TEXT PRIMARY KEY UNIQUE NOT NULL,
+    name TEXT NOT NULL,
+    clima TEXT NOT NULL,
+    terreno TEXT NOT NULL
+)
