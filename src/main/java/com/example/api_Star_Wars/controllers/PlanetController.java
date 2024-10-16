@@ -6,6 +6,7 @@ import com.example.api_Star_Wars.domains.planet.PlanetDTO;
 import com.example.api_Star_Wars.repositories.PlanetRepository;
 import com.example.api_Star_Wars.service.PlanetService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +24,11 @@ public class PlanetController {
     @Autowired
     private PlanetService planetService;
 
+    @GetMapping
+    public List<Planet> planetList(){
+        return planetRepository.findAll();
+    }
+
     @PostMapping
     public ResponseEntity<String> addPlanet(@RequestBody PlanetDTO planetDTO,String name,String clima,String terreno){
         Planet planet = new Planet();
@@ -38,4 +44,9 @@ public class PlanetController {
         planetService.deletaPlanet(id);
         return ResponseEntity.ok("Planeta apagado com sucesso!");
     }
+
+
+
+
+
 }

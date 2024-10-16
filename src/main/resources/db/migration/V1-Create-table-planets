@@ -3,3 +3,4 @@ CREATE TABLE planets(
     name TEXT NOT NULL,
     clima TEXT NOT NULL,
     terreno TEXT NOT NULL)
+)

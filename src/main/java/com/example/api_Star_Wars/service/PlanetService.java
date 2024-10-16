@@ -32,7 +32,7 @@ public class PlanetService {
 
     public void addPlanets(PlanetDTO planetDTO){   //criando um metodo para adicionar um planeta novo
         Planet planet = new Planet();
-        planet.setName(planetDTO.nome());
+        planet.setName(planetDTO.name());
         planet.setClima(planetDTO.clima());
         planet.setTerreno(planetDTO.terreno());
         planetRepository.save(planet);
